@@ -1,0 +1,30 @@
+{
+    "name": "armincms/sitemap",
+    "description": "Armincms sitemap Generator.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0" 
+    },
+    "autoload": {
+        "psr-4": {
+            "Armincms\\Sitemap\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Armincms\\Sitemap\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "0.1.0"
+}
