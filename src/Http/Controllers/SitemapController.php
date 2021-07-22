@@ -40,7 +40,7 @@ class SitemapController extends Controller
 					}
 
 					$urls->push([
-						'lastmod' => strval($resource->updated_at),
+						'lastmod' => $resource->updated_at->format('Y-m-d'),
 						'url' => method_exists($resource, 'url') ? $resource->url() : $resource->url,
 					]); 
 				}); 
@@ -59,7 +59,7 @@ class SitemapController extends Controller
 
 		return collect($urls)->map(function($url) use ($resource) {
 			return [
-				'lastmod' => strval($resource->updated_at),
+				'lastmod' => $resource->updated_at->format('Y-m-d'),
 				'url' => $resource->site()->url(rawurldecode($url)),
 			];
 		});
